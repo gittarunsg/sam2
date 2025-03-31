@@ -1,66 +1,122 @@
 // GA1 Question 1:
-// curl -X POST "http://localhost:8000/api/" -H "Content-Type: multipart/form-data" -F "question=Install and run Visual Studio Code. In your Terminal (or Command Prompt), type code -s and press Enter. Copy and paste the entire output below.What is the output of code -s?"
+// curl -X POST "http://localhost:8000/api/" -H "Content-Type: multipart/form-data" -F "question=Install and run Visual Studio Code. In your Terminal (or Command Prompt), type code -s and press Enter. Copy and paste the entire output below. What is the output of code -s?"
 {
-    "answer":"Version: Code 1.96.2 (fabdb6a30b49f79a7aba0f2ad9df9b399473380f, 2024-12-19T10:22:47.216Z)\nOS Version: Darwin arm64 24.2.0\nCPUs: Apple M2 Pro (12 x 2400)\nMemory (System): 16.00GB (0.26GB free)\nLoad (avg): 2, 2, 3\nVM: 0%\nScreen Reader: no\nProcess Argv: --crash-reporter-id 478d798c-7073-4dcf-90b0-967f5c7ad87b\nGPU Status: 2d_canvas: enabled\n  
- canvas_oop_rasterization: enabled_on\n  
- direct_rendering_display_compositor: disabled_off_ok\n gpu_compositing: enabled\n multiple_raster_threads: enabled_on\n opengl: enabled_on\n rasterization:  
- enabled\n raw_draw:  
- disabled_off_ok\n skia_graphite:  
- disabled_off\n video_decode:  
- enabled\n video_encode:  
- enabled\n webgl:  
- enabled\n webgl2:  
- enabled\n webgpu:  
- enabled\n webnn:  
- disabled_off\n\nCPU %\tMem MB\t PID\tProcess\n 0\t 180\t 23282\tcode main\n 0\t 49\t 23285\t gpu-process\n 2\t 33\t 23286\t utility-network-service\n 28\t 279\t 23287\twindow [
-        1
-    ] (binaryResearch.py — vscodeScripts)\n 15\t 131\t 23308\tshared-process\n 29\t 16\t 24376\t /Applications/Visual Studio Code.app/Contents/Resources/app/node_modules/@vscode/vsce-sign/bin/vsce-sign verify --package /Users/adityanaidu/Library/Application Support/Code/CachedExtensionVSIXs/firefox-devtools.vscode-firefox-debug-2.13.0 --signaturearchive /Users/adityanaidu/Library/Application Support/Code/CachedExtensionVSIXs/firefox-devtools.vscode-firefox-debug-2.13.0.sigzip\n 0\t 49\t 23309\tfileWatcher [
-        1
-    ]\n 4\t 459\t 23664\textensionHost [
-        1
-    ]\n 1\t 82\t 23938\t electron-nodejs (server.js )\n 0\t 229\t 23945\t electron-nodejs (bundle.js )\n 0\t 49\t 23959\t electron-nodejs (serverMain.js )\n 0\t 66\t 23665\tptyHost\n 0\t 0\t 23940\t /bin/zsh -i\n 7\t 0\t 24315\t /bin/zsh -i\n 0\t 0\t 24533\t (zsh)\n\nWorkspace Stats: \n| Window (binaryResearch.py — vscodeScripts)\n| Folder (vscodeScripts): 307 files\n| File types: py(82) js(21) txt(20) html(17) DS_Store(15) pyc(15) xml(11)\n| css(11) json(9) yml(5)\n| Conf files: settings.json(2) launch.json(1) tasks.json(1)\n| package.json(1)\n| Launch Configs: cppdbg"}
-    // GA1 Question 2:
-    //  curl -X POST "http://localhost:8000/api/" \
-    //  -H "Content-Type: multipart/form-data" \
-    //  -F "question=Running uv run --with httpie -- https [URL] installs the Python package httpie and sends a HTTPS request to the URL. Send a HTTPS request to https://httpbin.org/get with the URL encoded parameter email set to 23f2003751@ds.study.iitm.ac.in. What is the JSON output of the command? (Paste only the JSON body, not the headers)"
-    {
-        "answer": "{\n \"args\": {\n \"email\": \"23f2003751@ds.study.iitm.ac.in\"\n },\n \"headers\": {\n \"Accept\": \"_/_\",\n \"Accept-Encoding\": \"gzip, deflate\",\n \"Host\": \"httpbin.org\",\n \"User-Agent\": \"python-httpx/0.28.1\",\n \"X-Amzn-Trace-Id\": \"Root=1-67e0e49b-19cc348f24612e6b4a964cb8\"\n },\n \"origin\": \"152.58.177.70\",\n \"url\": \"https://httpbin.org/get?email=23f2003751%40ds.study.iitm.ac.in\"\n}"
-    }
-    // GA1 Question 3:
-    // curl -X POST "http://localhost:8000/api/"   -H "Content-Type: multipart/form-data"   -F "question=Download . In the directory where you downloaded it, make sure it is called README.md, and run npx -y prettier@3.4.2 README.md | sha256sum. What is the output of the command?"   -F "file=@tests\README.md"    
-    {
-        "result": "546f34cb1fbb09896491b147b86c1635ca79f4f5a91ce58882925d8fc43b3354 *-"
-    }
-    // GA1 Question 4:
-    //  curl -X POST "http://localhost:8000/api/" ^
-    //   -H "Content-Type: multipart/form-data" ^
-    //   -F "question=Let's make sure you can write formulas in Google Sheets. Type this formula into Google Sheets. (It won't work in Excel)
-    // =SUM(ARRAY_CONSTRAIN(SEQUENCE(100, 100, 5, 2), 1, 10))
-    // What is the result?"
-    {
-        "answer": "140"
-    }
-    //     GA1 Question 5:
-    //     curl -X POST "http://localhost:8000/api/" -H "Content-Type: multipart/form-data" -F question="Type this formula into Excel.       
-    // Note: This will ONLY work in Office 365.
-    // =SUM(TAKE(SORTBY({1,10,12,4,6,8,9,13,6,15,14,15,2,13,0,3}, {10,9,13,2,11,8,16,14,7,15,5,4,6,1,3,12}), 1, 6))
-    // What is the result?"
-    {
-        "answer": "131"
-    }
-    // GA1 question 7:
-    // curl -X POST "http://localhost:8000/api/" -H "Content-Type: multipart/form-data" -F question="How many Wednesdays are there in the date range 1986-08-06 to 2008-01-29?"
-    {
-        "answer": "1121"
-    }
-    // GA1 question 8:
-    // curl -X POST "http://localhost:8000/api/" -H "Content-Type: multipart/form-data" -F "question=Download and unzip file q-extract-csv-zip.zip which has a single extract.csv file inside. What is the value in the 'answer' column of the CSV file?" -F "file=@tests/q-extract-csv-zip.zip"
-    {
-        "answer": "e70d8"
-    }
-    // GA1 question 9:
-    //     curl -X POST "http://localhost:8000/api/" -H "Content-Type: multipart/form-data" -F "question=Sort this JSON array of objects by the value of the age field. In case of a tie, sort by the name field. Paste the resulting JSON below without any spaces or newlines. 
-    // [{\"name\":\"Alice\",\"age\":92},{\"name\":\"Bob\",\"age\":28},{\"name\":\"Charlie\",\"age\":16},{\"name\":\"David\",\"age\":56},{\"name\":\"Emma\",\"age\":70},{\"name\":\"Frank\",\"age\":67},{\"name\":\"Grace\",\"age\":36},{\"name\":\"Henry\",\"age\":94},{\"name\":\"Ivy\",\"age\":44},{\"name\":\"Jack\",\"age\":53},{\"name\":\"Karen\",\"age\":65},{\"name\":\"Liam\",\"age\":23},{\"name\":\"Mary\",\"age\":97},{\"name\":\"Nora\",\"age\":68},{\"name\":\"Oscar\",\"age\":57},{\"name\":\"Paul\",\"age\":88}]"
-    {
-        "answer": "[{\"name\":\"Charlie\",\"age\":16},{\"name\":\"Liam\",\"age\":23},{\"name\":\"Bob\",\"age\":28},{\"name\":\"Grace\",\"age\":36},{\"name\":\"Ivy\",\"age\":44},{\"name\":\"Jack\",\"age\":53},{\"name\":\"David\",\"age\":56},{\"name\":\"Oscar\",\"age\":57},{\"name\":\"Karen\",\"age\":65},{\"name\":\"Frank\",\"age\":67},{\"name\":\"Nora\",\"age\":68},{\"name\":\"Emma\",\"age\":70},{\"name\":\"Paul\",\"age\":88},{\"name\":\"Alice\",\"age\":92},{\"name\":\"Henry\",\"age\":94},{\"name\":\"Mary\",\"age\":97}]"
-    }
+    "answer": "Version: Code 1.96.2 (fabdb6a30b49f79a7aba0f2ad9df9b399473380f, 2024-12-19T10:22:47.216Z)\\nOS Version: Darwin arm64 24.2.0\\nCPUs: Apple M2 Pro (12 x 2400)\\nMemory (System): 16.00GB (0.26GB free)\\nLoad (avg): 2, 2, 3\\nVM: 0%\\nScreen Reader: no\\nProcess Argv: --crash-reporter-id 478d798c-7073-4dcf-90b0-967f5c7ad87b\\nGPU Status: 2d_canvas: enabled\\n  canvas_oop_rasterization: enabled_on\\n  direct_rendering_display_compositor: disabled_off_ok\\n gpu_compositing: enabled\\n multiple_raster_threads: enabled_on\\n opengl: enabled_on\\n rasterization:  enabled\\n raw_draw:   disabled_off_ok\\n skia_graphite:   disabled_off\\n video_decode:   enabled\\n video_encode:   enabled\\n webgl:   enabled\\n webgl2:   enabled\\n webgpu:   enabled\\n webnn:   disabled_off\\n\\nCPU %\\tMem MB\\t PID\\tProcess\\n 0\\t 180\\t 23282\\tcode main\\n 0\\t 49\\t 23285\\t gpu-process\\n 2\\t 33\\t 23286\\t utility-network-service\\n 28\\t 279\\t 23287\\twindow [\\n      1\\n    ] (binaryResearch.py — vscodeScripts)\\n 15\\t 131\\t 23308\\tshared-process\\n 29\\t 16\\t 24376\\t /Applications/Visual Studio Code.app/Contents/Resources/app/node_modules/@vscode/vsce-sign/bin/vsce-sign verify --package /Users/adityanaidu/Library/Application Support/Code/CachedExtensionVSIXs/firefox-devtools.vscode-firefox-debug-2.13.0 --signaturearchive /Users/adityanaidu/Library/Application Support/Code/CachedExtensionVSIXs/firefox-devtools.vscode-firefox-debug-2.13.0.sigzip\\n 0\\t 49\\t 23309\\tfileWatcher [\\n      1\\n    ]\\n 4\\t 459\\t 23664\textensionHost [\\n      1\\n    ]\\n 1\\t 82\\t 23938\t electron-nodejs (server.js )\\n 0\\t 229\\t 23945\t electron-nodejs (bundle.js )\\n 0\\t 49\\t 23959\t electron-nodejs (serverMain.js )\\n 0\\t 66\\t 23665\tptyHost\\n 0\\t 0\\t 23940\t /bin/zsh -i\\n 7\\t 0\\t 24315\t /bin/zsh -i\\n 0\\t 0\\t 24533\t (zsh)\\n\\nWorkspace Stats: \\n| Window (binaryResearch.py — vscodeScripts)\\n| Folder (vscodeScripts): 307 files\\n| File types: py(82) js(21) txt(20) html(17) DS_Store(15) pyc(15) xml(11)\\n| css(11) json(9) yml(5)\\n| Conf files: settings.json(2) launch.json(1) tasks.json(1)\\n| package.json(1)\\n| Launch Configs: cppdbg"
+}
+
+//  GA1 Question 2:
+//  curl -X POST "http://localhost:8000/api/"  -H "Content-Type: multipart/form-data"  -F "question=Running uv run --with httpie -- https [URL] installs the Python package httpie and sends a HTTPS request to the URL. Send a HTTPS request to https://httpbin.org/get with the URL encoded parameter email set to 23f2003751@ds.study.iitm.ac.in. What is the JSON output of the command? (Paste only the JSON body, not the headers)"
+{
+    "answer": "{\n \"args\": {\n \"email\": \"23f2003751@ds.study.iitm.ac.in\"\n },\n \"headers\": {\n \"Accept\": \"*/*\",\n \"Accept-Encoding\": \"gzip, deflate\",\n \"Host\": \"httpbin.org\",\n \"User-Agent\": \"python-httpx/0.28.1\",\n \"X-Amzn-Trace-Id\": \"Root=1-67e0e49b-19cc348f24612e6b4a964cb8\"\n },\n \"origin\": \"152.58.177.70\",\n \"url\": \"https://httpbin.org/get?email=23f2003751%40ds.study.iitm.ac.in\"\n}"
+}
+
+//  GA1 Question 3:
+//  curl -X POST "http://localhost:8000/api/"   -H "Content-Type: multipart/form-data"   -F "question=Download . In the directory where you downloaded it, make sure it is called README.md, and run npx -y prettier@3.4.2 README.md | sha256sum. What is the output of the command?"    -F "file=@tests\\README.md"    
+{
+    "result": "546f34cb1fbb09896491b147b86c1635ca79f4f5a91ce58882925d8fc43b3354 *-"
+}
+
+//  GA1 Question 4:
+//   curl -X POST "http://localhost:8000/api/" ^
+//    -H "Content-Type: multipart/form-data" ^
+//    -F "question=Let's make sure you can write formulas in Google Sheets. Type this formula into Google Sheets. (It won't work in Excel)
+//  // =SUM(ARRAY_CONSTRAIN(SEQUENCE(100, 100, 5, 2), 1, 10))
+//  // What is the result?"
+{
+    "answer": "140"
+}
+
+//   GA1 Question 5:
+//   Type this formula into Excel.
+//  //  Note: This will ONLY work in Office 365.
+//  // =SUM(TAKE(SORTBY({8,15,14,1,9,5,10,0,8,4,0,4,15,0,13,15},{10,9,13,2,11,8,16,14,7,15,1,12,6,3,5,4}),8,1))
+//  //  What is the result?
+{
+    "answer": "48"
+}
+
+//  GA1 Question 6:
+//  Just above this paragraph, there's a hidden input with a secret value. What is the value in the hidden input?
+{
+    "answer": "42"
+}
+
+//   GA1 question 7:
+//   How many Wednesdays are there in the date range 1980-06-17 to 2011-07-05?
+{
+    "answer": "16"
+}
+
+//   GA1 question 8:
+//   Download and unzip file q-extract-csv-zip.zip which has a single extract.csv file inside. What is the value in the 'answer' column of the CSV file?
+{
+    "answer": "This question involves downloading a file and processing its contents."
+}
+
+//  GA1 Question 9:
+//  Sort this JSON array of objects by the value of the age field. In case of a tie, sort by the name field. Paste the resulting JSON below without any spaces or newlines. [{"name":"Alice","age":59},{"name":"Bob","age":3},{"name":"Charlie","age":8},{"name":"David","age":14},{"name":"Emma","age":92},{"name":"Frank","age":19},{"name":"Grace","age":64},{"name":"Henry","age":46},{"name":"Ivy","age":9},{"name":"Jack","age":83},{"name":"Karen","age":17},{"name":"Liam","age":81},{"name":"Mary","age":90},{"name":"Nora","age":36},{"name":"Oscar","age":34},{"name":"Paul","age":95}] Sorted JSON:
+{
+    "answer": "[{\"name\":\"Bob\",\"age\":3},{\"name\":\"Charlie\",\"age\":8},{\"name\":\"Ivy\",\"age\":9},{\"name\":\"David\",\"age\":14},{\"name\":\"Karen\",\"age\":17},{\"name\":\"Frank\",\"age\":19},{\"name\":\"Nora\",\"age\":36},{\"name\":\"Oscar\",\"age\":34},{\"name\":\"Henry\",\"age\":46},{\"name\":\"Alice\",\"age\":59},{\"name\":\"Grace\",\"age\":64},{\"name\":\"Liam\",\"age\":81},{\"name\":\"Jack\",\"age\":83},{\"name\":\"Mary\",\"age\":90},{\"name\":\"Emma\",\"age\":92},{\"name\":\"Paul\",\"age\":95}]"
+}
+
+//  GA1 Question 10:
+//  Download q-multi-cursor-json.txt and use multi-cursors and convert it into a single JSON object, where key=value pairs are converted into {key: value, key: value, ...}. What's the result when you paste the JSON at tools-in-data-science.pages.dev/jsonhash and click the Hash button?
+{
+    "answer": "This question involves file manipulation and using a web-based tool."
+}
+
+//  GA1 Question 11:
+//  Find all <div>s having a foo class in the hidden element below. What's the sum of their data-value attributes? Sum of data-value attributes:
+{
+    "answer": "This question involves inspecting the HTML of a webpage."
+}
+
+//  GA1 Question 12:
+//  Download and process the files in q-unicode-data.zip which contains three files with different encodings: data1.csv: CSV file encoded in CP-1252 data2.csv: CSV file encoded in UTF-8 data3.txt: Tab-separated file encoded in UTF-16 Each file has 2 columns: symbol and value. Sum up all the values where the symbol matches ‘ OR Ž OR ž across all three files. What is the sum of all values associated with these symbols?
+{
+    "answer": "This question involves downloading files and processing their contents with specific encodings."
+}
+
+//  GA1 Question 13:
+//  Let's make sure you know how to use GitHub. Create a GitHub account if you don't have one. Create a new public repository. Commit a single JSON file called email.json with the value {\"email\": \"23f2002939@ds.study.iitm.ac.in\"} and push it. Enter the raw Github URL of email.json so we can verify it. (It might look like https://raw.githubusercontent.com/[GITHUB ID]/[REPO NAME]/main/email.json.)
+{
+    "answer": "This question involves using Git and GitHub. The answer is a URL."
+}
+
+//  GA1 Question 14:
+//  Download q-replace-across-files.zip and unzip it into a new folder, then replace all "IITM" (in upper, lower, or mixed case) with "IIT Madras" in all files. Leave everything as-is - don't change the line endings. What does running cat * | sha256sum in that folder show in bash?
+{
+    "answer": "This question involves downloading files and executing bash commands on the user's system."
+}
+
+//  GA1 Question 15:
+//  Download q-list-files-attributes.zip and extract it. Use ls with options to list all files in the folder along with their date and file size. What's the total size of all files at least 1258 bytes large and modified on or after Mon, 20 Nov, 2017, 1:54 pm IST? Don't copy from inside the ZIP file or use Windows Explorer to unzip. That destroys the timestamps. Extract using unzip, 7-Zip or similar utilities and check the timestamps.
+{
+    "answer": "This question involves downloading a file and using command-line tools to inspect file attributes."
+}
+
+//  GA1 Question 16:
+//  Download q-move-rename-files.zip and extract it. Use mv to move all files under folders into an empty folder. Then rename all files replacing each digit with the next. 1 becomes 2, 9 becomes 0, a1b9c.txt becomes a2b0c.txt. What does running grep . * | LC_ALL=C sort | sha256sum in bash on that folder show?
+{
+    "answer": "This question involves downloading files and using command-line tools to manipulate them."
+}
+
+//  GA1 Question 17:
+//  Download q-compare-files.zip and extract it. It has 2 nearly identical files, a.txt and b.txt, with the same number of lines. How many lines are different between a.txt and b.txt?
+{
+    "answer": "This question involves downloading files and comparing their contents."
+}
+
+//  GA1 Question 18:
+//  There is a tickets table in a SQLite database that has columns type, units, and price. Each row is a customer bid for a concert ticket. What is the total sales of all the items in the "Gold" ticket type? Write SQL to calculate it. Get all rows where the Type is "Gold". Ignore spaces and treat mis-spellings like GOLD, gold, etc. as "Gold". Calculate the sales as Units * Price, and sum them up.
+{
+    "answer": "This question involves using SQL to query a database."
+}
+
+//  GA2 Question 1:
+//  Download Llamafile. Run the Llama-3.2-1B-Instruct.Q6_K.llamafile model with it. Create a tunnel to the Llamafile server using ngrok. What is the ngrok URL? It might look like: https...
+{
+    "answer": "This question involves running a local server and using ngrok to create a tunnel. The result is a URL."
+}
+
+
